@@ -25,6 +25,7 @@ class OverlayWindow:
         self.config_path = "config.json"
         self.font_size = 14
         self.opacity = 0.8
+        self.is_overlay_mode = True
 
     def start(self):
         thread = threading.Thread(target=self._run, daemon=True)
@@ -56,9 +57,18 @@ class OverlayWindow:
         self.root.attributes('-topmost', True)
         self.root.attributes('-alpha', self.config.get("opacity", 0.8))
         self.root.overrideredirect(True)
+        self.root.bind("<F1>", lambda e: self.toggle_window_mode())
         observer = Observer()
         observer.schedule(ConfigWatcher(self), path=".", recursive=False)
         observer.start()
+        
+        menu = tk.Menu(self.root, tearoff=0)
+        menu.add_command(label="Toggle Window Mode", command=self.toggle_window_mode)
+
+        def show_menu(event):
+            menu.tk_popup(event.x_root, event.y_root)
+
+        self.root.bind("<Button-3>", show_menu)
 
         # Movable
         def start_move(e): self._x, self._y = e.x, e.y
@@ -111,6 +121,12 @@ class OverlayWindow:
         handle.bind("<B1-Motion>", do_resize)
 
         self.root.mainloop()
+    
+    def toggle_window_mode(self):
+        self.is_overlay_mode = not self.is_overlay_mode
+        self.root.overrideredirect(self.is_overlay_mode)
+        # Re-apply geometry so it doesn't jump
+        self.root.geometry(f"+{self.root.winfo_x()}+{self.root.winfo_y()}")
 
     def update_text(self, new_text):
         self.text = new_text
