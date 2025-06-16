@@ -1,8 +1,9 @@
 # clip-translate
 Some app I developed because I want to read some Japanese comments on X/Twitter without Google's Translator failing on me.<br/>
-Works well with Textractor or other third party apps that retrieve text from games, video, etc too!<br/>
-You can modify the system prompt to help you add extra information that may help you learn Japanese I guess.<br/>
+This works well with Textractor or other third party apps that retrieve text from games, video, manga, etc.<br/>
+You can modify the system prompt to add extra information that may help you learn Japanese I guess.<br/>
 Feel free to modify the code to suit your purposes.<br/>
+Recommended models: **Gemini 2.0 Flash** and **DeepSeek V3 0324**
 
 ## Usage Example
 ![Example usage](https://i.ibb.co/5XkSkS3c/image.png)
