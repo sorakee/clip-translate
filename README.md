@@ -5,7 +5,7 @@ You can modify the system prompt to help you add extra information that may help
 Feel free to modify the code to suit your purposes.<br/>\
 
 ## Usage Example
-![Example usage](https://ibb.co/DPYvYvFK)
+![Example usage](https://i.ibb.co/5XkSkS3c/image.png)
 
 ## How to Run
 1. Retrieve your API key (In this case, I use OpenRouter)
