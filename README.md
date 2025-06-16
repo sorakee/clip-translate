@@ -8,7 +8,7 @@ You can modify the system prompt to help you add extra information that may help
 2. Create a *secrets.json* file in the same directory as main.py and add this:<br/>
 ```
 {
-  "openrouter_api_key": "",
+  "openrouter_api_key": "INSERT YOUR API KEY HERE",
 }
 ```
 4. `pip install -r requirements.txt`
