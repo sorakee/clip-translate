@@ -1,3 +1,4 @@
+# Incomplete, WIP
 from pystray import Icon, MenuItem as Item, Menu
 from PIL import Image, ImageDraw
 import threading
